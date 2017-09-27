@@ -1,0 +1,45 @@
+<main>
+    <nav>
+        <a [routerLink]="['/dashboard']">Go to Polls</a>
+    </nav>
+    <h2>{{ poll.question }}</h2>
+    <p>Click the vote button to choose one.</p>
+
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Option</th>
+                    <th>Current Count of Votes</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{poll.option1.content}}</td>
+                    <td>{{poll.option1.votes}}</td>
+                    <td><form (submit)="onVote1()" ><button class="button" type="submit" name="button">Vote</button></form></td>
+                </tr>
+                <tr>
+                    <td>{{poll.option2.content}}</td>
+                    <td>{{poll.option2.votes}}</td>
+                    <td><form (submit)="onVote2()" ><button class="button" type="submit" name="button">Vote</button></form></td>
+                </tr>
+                <tr>
+                    <td>{{poll.option3.content}}</td>
+                    <td>{{poll.option3.votes}}</td>
+                    <td><form (submit)="onVote3()" ><button class="button" type="submit" name="button">Vote</button></form></td>
+                </tr>
+                <tr>
+                    <td>{{poll.option4.content}}</td>
+                    <td>{{poll.option4.votes}}</td>
+                    <td><form (submit)="onVote4()" ><button class="button" type="submit" name="button">Vote</button></form></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<!-- {{ pollID | json}}
+this should be the poll:
+{{ poll | json}} -->

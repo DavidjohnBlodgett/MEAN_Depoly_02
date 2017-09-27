@@ -1,0 +1,29 @@
+<main>
+    <form (submit)='onSubmit()' #myUserInput='ngForm'>
+        <table>
+            <tr>
+                <td>Your Name:</td>
+                <td><input name="name" rows="1" cols="80"
+                        required
+                        minlength="1"
+                        [(ngModel)]='userInput.name'
+                        #name='ngModel'
+                    ></td>
+            </tr>
+            <tr *ngIf="name.invalid && (name.dirty || name.touched)"
+                     class="alert">
+                     <td></td>
+                <td *ngIf="name.errors.required">
+                    Name is required.
+                </td>
+                <td *ngIf="name.errors.minlength">
+                    Name must be at least 1 character long.
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button class="button" type="submit" name="button" [disabled]='myUserInput.invalid'>Login</button></td>
+            </tr>
+        </table>
+    </form>
+</main>
